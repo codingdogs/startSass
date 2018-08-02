@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta,title引入 -->
+    <%- include('./htmlBlock/meta.html',{title:"说明文档"}) %>
+
+        <!-- 页面基础css引入 -->
+        <%- include('./htmlBlock/css.html') %>
+
+            <!-- 此页面css引入 -->
+            <link rel="stylesheet" href="./styles/readme.css">
+</head>
+
+<body>
+
+    <div class="tc text-bold f30 color-primary ellipsis">
+            djkfjdjfj
+    </div>
+    <div style='width:80%;margin:10px auto;'>
+        <div class="bg-primary color-white f15 pd10 mt-20 z-d-epth-1-">
+            - 举例说明css的一些用法，更多详细请查看styles/componets下面组件scss
+        </div>
+        <section class="mt30">
+            <div class="f20 text-bold">• 字体颜色，划过字体颜色，背景颜色，划过背景颜色，均有sass循环color变量生成css,详细可查看styles/components/color.scss</div>
+            <div class="pd-l10">
+                <p class="mt10">字体颜色示例：添加类名 color-[$color]</p>
+                <div class="pd10 bg-borderLight mt5 radius5">
+                    <span class="color-primary">color-primary</span>
+                    <span class="color-title">color-title</span>
+                    <span class="color-content">color-content</span>
+                    <span class="color-sub">color-sub</span>
+                </div>
+                <p class="mt10">背景颜色：添加类名 bg-[$color] </p>
+                <p class="mt10">划过字体颜色：添加类名 a-hover-[$color]</p>
+                <p class="mt10">划过背景颜色：添加类名 a-hover-bg-[$color]</p>
+            </div>
+        </section>
+        <section class="mt30">
+            <div class="f20 text-bold">• 字体大小设置</div>
+            <div class="pd-l10">
+                <p class="mt10">为方便记忆，所有字体大小添加类名 f[px] （12-80）即可</p>
+                <div class="pd10 bg-borderLight mt5 radius5">
+                    <span class="f12">f12</span>
+                    <span class="f20">f20</span>
+                    <span class="f30">f30</span>
+                    <span class="f40">f40</span>
+                </div>
+            </div>
+        </section>
+        <section class="mt30">
+            <div class="f20 text-bold">• margin,pading,radius等样式</div>
+            <div class="pd-l10">
+                <p class="mt10">为方便记忆，（0-80）</p>
+                <div class="pd10 bg-borderLight mt5 radius5">
+                    <span>
+                        边距举例（正） .mt10 .mb10 .ml10 .mr10
+                        <br/> 边距举例（负） .mt-10 .mb-10 .ml-10 .mr-10
+                    </span>
+                    <br/>
+                    <br/>
+                    <span>
+                        填充举例（正） .pd10 .pd-l10 .pd-r10 .pd-b10 .pd-t10
+                    </span>
+                    <br/>
+                    <span>
+                        radius: .radius3 .radius5
+                    </span>
+                </div>
+            </div>
+        </section>
+        <section class="clearfix mt20 mb20">
+            <div class="f20 text-bold">• button的样式控制</div>
+            添加class控制button样式<br/>
+            .btn为基础button class<br/>
+            添加对应color即可改变背景颜色，如（bg、title、content）<br/>
+            添加对应color即可改变背景颜色，如（bg、title、content）<br/>
+
+
+
+            <button class="btn">primary</button>
+            <button class="btn bg">bg</button>
+            <button class="btn title">title</button>
+            <button class="btn a-hover-bg-white a-hover-title">a-hover-bg-white a-hover-title</button>
+        </section>
+        <div class="markdown-body" onclick='page.click()'>
+            <%- markdown.render(include('../Readme.md')) %>
+        </div>
+    </div>
+    
+    <!-- 页面基础js引入 -->
+    <%- include('./htmlBlock/js.html') %>
+        <script>
+            var page = Page({
+                data() {
+                    return {
+                        a: 2
+                    }
+                },
+                ready: function () {
+                    this.click();
+                },
+                methods: {
+                    click: function () {
+                        // alert(this.a)
+                    }
+                }
+            })
+        </script>
+</body>
+
+</html>

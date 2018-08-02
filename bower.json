@@ -1,0 +1,9 @@
+{
+  "name": "newsrc",
+  "private": true,
+  "dependencies": {},
+  "overrides": {},
+  "devDependencies": {
+    "js-fn-module": "^0.1.1"
+  }
+}

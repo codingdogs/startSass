@@ -1,0 +1,101 @@
+
+//transition
+@mixin tran($a:all, $b:ease, $c:.3s, $d:0s) {
+    transition: $a $b $c $d;
+}
+
+//animation
+@mixin animation($a) {
+    animation: $a;
+}
+
+//border
+@mixin radius($a) {
+    width: $a;
+    height: $a;
+    border-radius: 50%;
+}
+
+
+//opacity
+@mixin opacity($a) {
+    opacity: $a;
+    filter: alpha(opacity=$a*100);
+}
+
+@mixin line_over($num:2, $f:14, $l:1.47059) {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $num;
+    line-height:$l;
+    font-size:$f+px;
+    height: $f*$l*$num+px;
+}
+@mixin line_over_auto($num:2, $f:14, $l:1.47059) {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $num;
+    line-height:$l;
+    font-size:$f+px;
+    max-height: $f*$l*$num+px;
+}
+
+@mixin center($w,$h:$w) {
+    position: absolute;
+    left: 50%;
+    top:50%;
+    margin-top:-$h/2;
+    margin-left: -$w/2;
+}
+
+@mixin h_middle($a) {
+    height: $a;
+    line-height: $a;
+}
+
+@mixin circle($a) {
+    width: $a;
+    height: $a;
+    border-radius: 50%;
+}
+
+@mixin fang($a) {
+    width: $a;
+    height: $a;
+}
+
+@mixin fang_c($a) {
+    width: $a;
+    height: $a;
+    line-height: $a;
+    text-align: center;
+}
+
+@mixin circle_m($a) {
+    width: $a;
+    height: $a;
+    border-radius: 50%;
+    text-align: center;
+    line-height: $a;
+}
+
+@mixin gradient($a, $b) {
+    background: #000;
+    /* 一些不支持背景渐变的浏览器 */
+    background: -moz-linear-gradient(top, $a, $b);
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from($a), to($b));
+    background: -o-linear-gradient(top, $a, $b);
+}
+@mixin blur($a:7px){
+    filter: url(blur.svg#blur);
+    -webkit-filter: blur($a);
+    -moz-filter: blur($a);
+    -ms-filter: blur($a);
+    filter: blur($a);
+}

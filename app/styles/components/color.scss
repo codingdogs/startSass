@@ -1,5 +1,9 @@
-### $colors,$w,以及media查询的数值都是可以动态修改
-```sass
+/*
+ * @Author: 严浩韦
+ * @Date: 2018-04-28 17:04:09
+ * @Last Modified by: 严浩韦
+ * @Last Modified time: 2018-06-27 13:22:38
+ */
 //便于循环编写css 目前没有找到更好的办法
 $color:( "primary":red, // 主题颜色
 "title":#333, // 标题色
@@ -39,24 +43,3 @@ $medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
 $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
 $w-and-up: "only screen and (min-width : #{$w})" !default;
 $w-and-down: "only screen and (max-width : #{$w})" !default;
-```
-
-
-
-
-| class 名称      | 描述 | 举例 |
-| ------------ | :----- |---------|
-| color-[$color]        | 文本颜色控制  | color-primary |
-| bg-[$color]        | 背景颜色控制  |bg-title |
-| border-[$color]        | 边控颜色控制  | border-title|
-| a-hover-[$color]        | hover颜色控制  | a-hover-title|
-| mt[$num] (0-80)       | margin-top:$num  | mt10|
-| ml[$num] (0-80)         | margin-left:$num  | ml10|
-| mr[$num] (0-80)         | margin-right:$num  | mr10|
-| mb[$num]  (0-80)        | margin-bottom:$num  | mb10|
-| mt-[$num]  (0-80)       | margin-top:-$num  | mt-10|
-| pd[$num]  (0-80)       | padding:$num  | pd10|
-| pd-l[$num]  (0-80)       | padding-left:$num  | pd-10|
-| z-depth-[$num] (0-5)     | 阴影  | z-depth-1|
-
-> 更多详细可查看源码

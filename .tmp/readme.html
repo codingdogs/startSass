@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta,title引入 -->
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>说明文档</title>
+
+
+        <!-- 页面基础css引入 -->
+         <!-- build:css styles/main.min.css -->
+<link rel="stylesheet" href="./styles/main.css">
+ <!-- endbuild -->
+
+
+            <!-- 此页面css引入 -->
+            <link rel="stylesheet" href="./styles/readme.css">
+</head>
+
+<body>
+
+    <div class="tc text-bold f30 color-primary ellipsis">
+            djkfjdjfj
+    </div>
+    <div style='width:80%;margin:10px auto;'>
+        <div class="bg-primary color-white f15 pd10 mt-20 z-d-epth-1-">
+            - 举例说明css的一些用法，更多详细请查看styles/componets下面组件scss
+        </div>
+        <section class="mt30">
+            <div class="f20 text-bold">• 字体颜色，划过字体颜色，背景颜色，划过背景颜色，均有sass循环color变量生成css,详细可查看styles/components/color.scss</div>
+            <div class="pd-l10">
+                <p class="mt10">字体颜色示例：添加类名 color-[$color]</p>
+                <div class="pd10 bg-borderLight mt5 radius5">
+                    <span class="color-primary">color-primary</span>
+                    <span class="color-title">color-title</span>
+                    <span class="color-content">color-content</span>
+                    <span class="color-sub">color-sub</span>
+                </div>
+                <p class="mt10">背景颜色：添加类名 bg-[$color] </p>
+                <p class="mt10">划过字体颜色：添加类名 a-hover-[$color]</p>
+                <p class="mt10">划过背景颜色：添加类名 a-hover-bg-[$color]</p>
+            </div>
+        </section>
+        <section class="mt30">
+            <div class="f20 text-bold">• 字体大小设置</div>
+            <div class="pd-l10">
+                <p class="mt10">为方便记忆，所有字体大小添加类名 f[px] （12-80）即可</p>
+                <div class="pd10 bg-borderLight mt5 radius5">
+                    <span class="f12">f12</span>
+                    <span class="f20">f20</span>
+                    <span class="f30">f30</span>
+                    <span class="f40">f40</span>
+                </div>
+            </div>
+        </section>
+        <section class="mt30">
+            <div class="f20 text-bold">• margin,pading,radius等样式</div>
+            <div class="pd-l10">
+                <p class="mt10">为方便记忆，（0-80）</p>
+                <div class="pd10 bg-borderLight mt5 radius5">
+                    <span>
+                        边距举例（正） .mt10 .mb10 .ml10 .mr10
+                        <br/> 边距举例（负） .mt-10 .mb-10 .ml-10 .mr-10
+                    </span>
+                    <br/>
+                    <br/>
+                    <span>
+                        填充举例（正） .pd10 .pd-l10 .pd-r10 .pd-b10 .pd-t10
+                    </span>
+                    <br/>
+                    <span>
+                        radius: .radius3 .radius5
+                    </span>
+                </div>
+            </div>
+        </section>
+        <section class="clearfix mt20 mb20">
+            <div class="f20 text-bold">• button的样式控制</div>
+            添加class控制button样式<br/>
+            .btn为基础button class<br/>
+            添加对应color即可改变背景颜色，如（bg、title、content）<br/>
+            添加对应color即可改变背景颜色，如（bg、title、content）<br/>
+
+
+
+            <button class="btn">primary</button>
+            <button class="btn bg">bg</button>
+            <button class="btn title">title</button>
+            <button class="btn a-hover-bg-white a-hover-title">a-hover-bg-white a-hover-title</button>
+        </section>
+        <div class="markdown-body" onclick='page.click()'>
+            <h3>$colors,$w,以及media查询的数值都是可以动态修改</h3>
+<pre><code class="language-sass">//便于循环编写css 目前没有找到更好的办法
+$color:( &quot;primary&quot;:red, // 主题颜色
+&quot;title&quot;:#333, // 标题色
+&quot;sub&quot;:#999, //副标题色
+&quot;content&quot;:#666, //文字内容色
+&quot;grey&quot;:#fcfcfc,
+&quot;white&quot;:#fff, //白色
+&quot;black&quot;:#000, //黑色
+&quot;bg&quot;:#1d3e56, //背景颜色
+&quot;bgLight&quot;:#363636, //稍浅背景颜色
+&quot;greyBg&quot;:#fafafa, //浅色背景颜色
+&quot;greyDark&quot;:#f2f2f2,
+&quot;border&quot;:#eaeefb,
+&quot;borderLight&quot;:#f3f3f3,
+&quot;success&quot;:#57c90c,
+&quot;error&quot;:#ff4048,
+&quot;choose&quot;:#ffeced)!default;
+@function color($n) {
+    @return map-get($color,$n);
+}
+$w :1500px!default;
+// ==========================================================================
+
+// Media Query Ranges
+$small-screen-up: 601px !default;
+$medium-screen-up: 993px !default;
+$large-screen-up: 1201px !default;
+$small-screen: 600px !default;
+$medium-screen: 992px !default;
+$large-screen: 1200px !default;
+
+$medium-and-up: &quot;only screen and (min-width : #{$small-screen-up})&quot; !default;
+$large-and-up: &quot;only screen and (min-width : #{$medium-screen-up})&quot; !default;
+$extra-large-and-up: &quot;only screen and (min-width : #{$large-screen-up})&quot; !default;
+$small-and-down: &quot;only screen and (max-width : #{$small-screen})&quot; !default;
+$medium-and-down: &quot;only screen and (max-width : #{$medium-screen})&quot; !default;
+$medium-only: &quot;only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})&quot; !default;
+$w-and-up: &quot;only screen and (min-width : #{$w})&quot; !default;
+$w-and-down: &quot;only screen and (max-width : #{$w})&quot; !default;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>name 名称</th>
+<th style="text-align:center">type 类型</th>
+<th style="text-align:center">default 默认值</th>
+<th>describe 描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>img</td>
+<td style="text-align:center">String</td>
+<td style="text-align:center"></td>
+<td>必填值，图片路径</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+    </div>
+    
+    <!-- 页面基础js引入 -->
+    
+<!-- build:js scripts/main.min.js -->
+<script src="./bower_components/js-fn-module/dist/scripts/js-fn-module.min.js"></script>
+<script src='./scripts/main.js'></script>
+ <!-- endbuild -->
+
+        <script>
+            var page = Page({
+                data() {
+                    return {
+                        a: 2
+                    }
+                },
+                ready: function () {
+                    this.click();
+                },
+                methods: {
+                    click: function () {
+                        // alert(this.a)
+                    }
+                }
+            })
+        </script>
+</body>
+
+</html>
