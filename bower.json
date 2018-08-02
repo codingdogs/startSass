@@ -1,7 +1,8 @@
 {
   "name": "startSass",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+  },
   "overrides": {},
   "devDependencies": {
     "js-fn-module": "^0.1.1"

@@ -1,3 +1,10 @@
+
+```
+bower install --save startSass
+npm install --save startsass
+```
+
+
 ### $colors,$w,以及media查询的数值都是可以动态修改
 ```sass
 //便于循环编写css 目前没有找到更好的办法
