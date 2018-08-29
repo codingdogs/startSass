@@ -1,6 +1,6 @@
 {
     "name": "startsass",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "base sass for css",
     "main": "gulpfile.js",
     "private": false,
