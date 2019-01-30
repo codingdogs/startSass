@@ -572,22 +572,22 @@ $z in $color {//循环colors生成样式
 @for $i from 1 through 20 {
     //width 百分比
     .cl#{$i} {
-        width: 1/$i*100+%;
+        width: percentage(1/$i);
         float: left;
     }
 }
 @for $i from 1 through 20 {
     //width 百分比
     .cl-p#{$i} {
-        width: 1/$i*100+%;
-        padding-bottom:1/$i*100+%;
+        width: percentage(1/$i);
+        padding-bottom:percentage(1/$i);
         float: left;
     }
 }
 @for $i from 1 through 12 {
     //width 百分比
     .col#{$i} {
-        width: $i/12*100+%;
+        width: percentage($i/12);
         float: left;
     }
 }
